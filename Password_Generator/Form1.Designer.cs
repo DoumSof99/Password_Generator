@@ -1,7 +1,7 @@
 ﻿
 namespace Password_Generator
 {
-    partial class Form1
+    partial class Password_Generator_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -34,18 +34,15 @@ namespace Password_Generator
             this.loIncludeNumbers = new System.Windows.Forms.Label();
             this.loIncludeLowercase = new System.Windows.Forms.Label();
             this.loIncludeUppercase = new System.Windows.Forms.Label();
-            this.loExcludeSimilarChars = new System.Windows.Forms.Label();
             this.loGeneratedPassword = new System.Windows.Forms.Label();
             this.ctrlPassLength = new System.Windows.Forms.NumericUpDown();
             this.ctrlIncludeSymbols = new System.Windows.Forms.CheckBox();
             this.ctrlIncludeNumbers = new System.Windows.Forms.CheckBox();
             this.ctrlIncludeLowercase = new System.Windows.Forms.CheckBox();
             this.ctrlIncludeUppercase = new System.Windows.Forms.CheckBox();
-            this.ctrlExcludeSimilarChars = new System.Windows.Forms.CheckBox();
             this.ctrlGeneratePassword = new System.Windows.Forms.Button();
             this.ctrlWriteToText = new System.Windows.Forms.Button();
             this.ctrlPassword = new System.Windows.Forms.TextBox();
-            this.ctrlAnotherPassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlPassLength)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,23 +101,12 @@ namespace Password_Generator
             this.loIncludeUppercase.TabIndex = 4;
             this.loIncludeUppercase.Text = "Include Upppercase Characters:";
             // 
-            // loExcludeSimilarChars
-            // 
-            this.loExcludeSimilarChars.AutoSize = true;
-            this.loExcludeSimilarChars.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.loExcludeSimilarChars.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.loExcludeSimilarChars.Location = new System.Drawing.Point(44, 242);
-            this.loExcludeSimilarChars.Name = "loExcludeSimilarChars";
-            this.loExcludeSimilarChars.Size = new System.Drawing.Size(185, 19);
-            this.loExcludeSimilarChars.TabIndex = 5;
-            this.loExcludeSimilarChars.Text = "Exclude Similar Characters:";
-            // 
             // loGeneratedPassword
             // 
             this.loGeneratedPassword.AutoSize = true;
             this.loGeneratedPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.loGeneratedPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.loGeneratedPassword.Location = new System.Drawing.Point(44, 367);
+            this.loGeneratedPassword.Location = new System.Drawing.Point(44, 326);
             this.loGeneratedPassword.Name = "loGeneratedPassword";
             this.loGeneratedPassword.Size = new System.Drawing.Size(179, 19);
             this.loGeneratedPassword.TabIndex = 6;
@@ -183,84 +169,64 @@ namespace Password_Generator
             this.ctrlIncludeUppercase.Text = "(e.g. ABCDEFG)";
             this.ctrlIncludeUppercase.UseVisualStyleBackColor = true;
             // 
-            // ctrlExcludeSimilarChars
-            // 
-            this.ctrlExcludeSimilarChars.AutoSize = true;
-            this.ctrlExcludeSimilarChars.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ctrlExcludeSimilarChars.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ctrlExcludeSimilarChars.Location = new System.Drawing.Point(277, 238);
-            this.ctrlExcludeSimilarChars.Name = "ctrlExcludeSimilarChars";
-            this.ctrlExcludeSimilarChars.Size = new System.Drawing.Size(133, 23);
-            this.ctrlExcludeSimilarChars.TabIndex = 12;
-            this.ctrlExcludeSimilarChars.Text = "(e.g. i, L, 1, o, 0)";
-            this.ctrlExcludeSimilarChars.UseVisualStyleBackColor = true;
-            // 
             // ctrlGeneratePassword
             // 
             this.ctrlGeneratePassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.ctrlGeneratePassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ctrlGeneratePassword.Location = new System.Drawing.Point(277, 292);
+            this.ctrlGeneratePassword.Location = new System.Drawing.Point(277, 251);
             this.ctrlGeneratePassword.Name = "ctrlGeneratePassword";
             this.ctrlGeneratePassword.Size = new System.Drawing.Size(119, 31);
             this.ctrlGeneratePassword.TabIndex = 13;
             this.ctrlGeneratePassword.Text = "Generate Password";
             this.ctrlGeneratePassword.UseVisualStyleBackColor = true;
+            this.ctrlGeneratePassword.Click += new System.EventHandler(this.ctrlGeneratePassword_Click);
             // 
             // ctrlWriteToText
             // 
             this.ctrlWriteToText.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.ctrlWriteToText.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ctrlWriteToText.Location = new System.Drawing.Point(424, 292);
+            this.ctrlWriteToText.Location = new System.Drawing.Point(424, 251);
             this.ctrlWriteToText.Name = "ctrlWriteToText";
             this.ctrlWriteToText.Size = new System.Drawing.Size(119, 31);
             this.ctrlWriteToText.TabIndex = 14;
             this.ctrlWriteToText.Text = "Write To Text Editor";
             this.ctrlWriteToText.UseVisualStyleBackColor = true;
+            this.ctrlWriteToText.Click += new System.EventHandler(this.ctrlWriteToText_Click);
             // 
             // ctrlPassword
             // 
             this.ctrlPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.ctrlPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ctrlPassword.Location = new System.Drawing.Point(277, 359);
+            this.ctrlPassword.Location = new System.Drawing.Point(277, 318);
             this.ctrlPassword.Name = "ctrlPassword";
             this.ctrlPassword.Size = new System.Drawing.Size(296, 27);
             this.ctrlPassword.TabIndex = 15;
             // 
-            // ctrlAnotherPassword
-            // 
-            this.ctrlAnotherPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ctrlAnotherPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ctrlAnotherPassword.Location = new System.Drawing.Point(593, 355);
-            this.ctrlAnotherPassword.Name = "ctrlAnotherPassword";
-            this.ctrlAnotherPassword.Size = new System.Drawing.Size(214, 31);
-            this.ctrlAnotherPassword.TabIndex = 16;
-            this.ctrlAnotherPassword.Text = "Generate Another Password";
-            this.ctrlAnotherPassword.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // Password_Generator_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 451);
-            this.Controls.Add(this.ctrlAnotherPassword);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(681, 411);
             this.Controls.Add(this.ctrlPassword);
             this.Controls.Add(this.ctrlWriteToText);
             this.Controls.Add(this.ctrlGeneratePassword);
-            this.Controls.Add(this.ctrlExcludeSimilarChars);
             this.Controls.Add(this.ctrlIncludeUppercase);
             this.Controls.Add(this.ctrlIncludeLowercase);
             this.Controls.Add(this.ctrlIncludeNumbers);
             this.Controls.Add(this.ctrlIncludeSymbols);
             this.Controls.Add(this.ctrlPassLength);
             this.Controls.Add(this.loGeneratedPassword);
-            this.Controls.Add(this.loExcludeSimilarChars);
             this.Controls.Add(this.loIncludeUppercase);
             this.Controls.Add(this.loIncludeLowercase);
             this.Controls.Add(this.loIncludeNumbers);
             this.Controls.Add(this.loIncludeSymbols);
             this.Controls.Add(this.loPassLength);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "Password_Generator_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Password Generator Form";
             ((System.ComponentModel.ISupportInitialize)(this.ctrlPassLength)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -274,18 +240,15 @@ namespace Password_Generator
         private System.Windows.Forms.Label loIncludeNumbers;
         private System.Windows.Forms.Label loIncludeLowercase;
         private System.Windows.Forms.Label loIncludeUppercase;
-        private System.Windows.Forms.Label loExcludeSimilarChars;
         private System.Windows.Forms.Label loGeneratedPassword;
         private System.Windows.Forms.NumericUpDown ctrlPassLength;
         private System.Windows.Forms.CheckBox ctrlIncludeSymbols;
         private System.Windows.Forms.CheckBox ctrlIncludeNumbers;
         private System.Windows.Forms.CheckBox ctrlIncludeLowercase;
         private System.Windows.Forms.CheckBox ctrlIncludeUppercase;
-        private System.Windows.Forms.CheckBox ctrlExcludeSimilarChars;
         private System.Windows.Forms.Button ctrlGeneratePassword;
         private System.Windows.Forms.Button ctrlWriteToText;
         private System.Windows.Forms.TextBox ctrlPassword;
-        private System.Windows.Forms.Button ctrlAnotherPassword;
     }
 }
 
